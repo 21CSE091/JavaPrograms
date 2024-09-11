@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include<math.h>
+int main() {
+    int n=5,n1=4;
+    int A[5]={1,2,1,5,9};
+    int B[4]={5,8,7,9};
+    int c[n1];
+    int a=0,b=0;
+    for(int i=0;i<n;i++)
+    {
+        a=a*10+A[i];
+    }
+    for(int i=0;i<n1;i++)
+    {
+        b=b*10+B[i];
+    }
+    int temp,temp1,add;
+    temp=pow(10,n)-1;
+    temp1=temp-b;
+    add=temp1+a;
+    int carry;
+    if(add>n)
+    {
+        carry=add/(pow(10,n));
+        printf("\n%d",carry);
+        int res=add-pow(10,n)+carry;
+        //printf("\n%d",add-carry*(int)pow(10, n)+carry);
+        printf("\n%d",res);
+    }
+    return 0;
+}

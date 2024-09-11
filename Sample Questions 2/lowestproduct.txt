@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the array size: ");
+        int n=scan.nextInt();
+        int[] array=new int[n];
+        for(int i=0;i<n;i++) 
+        {
+            array[i]=scan.nextInt();
+        }
+        Arrays.sort(array);
+        int m=array[0]*array[1]*array[2];
+        int m1=0;
+        int m2=1;
+        int m3=2;
+        for(int i=0;i<=n-2;i++) 
+        {
+            for(int j=i+1;j<n-1;j++) 
+            {
+                int pro=array[i]*array[j]*array[j+1];
+                if(pro<m) {
+                    m=pro;
+                    m1=i;
+                    m2=j;
+                    m3=j+1;
+                }
+            }
+        }
+        System.out.println("Minimum product of 3 elements: "+m);
+        System.out.println("Elements: "+array[m1]+" "+array[m2]+" "+array[m3]);
+    }
+}
