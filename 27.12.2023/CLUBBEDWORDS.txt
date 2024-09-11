@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.List;
+public class ClubbedWordsFinder {
+    public static List<String> findClubbedWords(String[] words) {
+        List<String> clubbedWords = new ArrayList<>();
+        for (int i = 0; i < words.length; i++) {
+            for (int j = i + 1; j < words.length; j++) {
+                if (words[i].contains(words[j]) || words[j].contains(words[i])) {
+                    clubbedWords.add(words[i] + words[j]);
+                }
+            }
+        }
+        return clubbedWords;
+    }
+    public static void main(String[] args) {
+        String[] words = {"mat", "mate", "matbellmates", "bell", "bellmatesbell", "butterribbon", "butter", "ribbon"};
+        List<String> result = findClubbedWords(words);
+        System.out.println(result);
+    }
+}
