@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class CalculateAverage {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double firstNumber = scanner.nextDouble();
+        System.out.print("Enter the second number: ");
+        double secondNumber = scanner.nextDouble();
+        double average = (firstNumber + secondNumber) / 2;
+        System.out.printf("The average is: %.2f%n", average);
+        scanner.close();
+    }
+}
