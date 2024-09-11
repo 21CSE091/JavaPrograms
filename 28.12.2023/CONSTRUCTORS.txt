@@ -1,0 +1,58 @@
+public class ConstructorExample {
+    private int number;
+    private String text;
+
+    // No arguments constructor
+    public ConstructorExample() {
+        System.out.println("No arguments constructor");
+    }
+
+    // Default constructor
+    public ConstructorExample(int number, String text) {
+        this.number = number;
+        this.text = text;
+        System.out.println("Default constructor");
+        displayValues();
+    }
+
+    // Parameterized constructor with different types of parameters
+    public ConstructorExample(int number) {
+        this.number = number;
+        System.out.println("Parameterized constructor with int");
+        displayValues();
+    }
+
+    public ConstructorExample(String text) {
+        this.text = text;
+        System.out.println("Parameterized constructor with String");
+        displayValues();
+    }
+
+    public ConstructorExample(int number, String text, boolean flag) {
+        this.number = number;
+        this.text = text;
+        System.out.println("Parameterized constructor with int, String, and boolean");
+        displayValues();
+    }
+
+    private void displayValues() {
+        System.out.println("Number: " + number + ", Text: " + text);
+    }
+
+    public static void main(String[] args) {
+        // No arguments constructor
+        ConstructorExample example1 = new ConstructorExample();
+
+        // Default constructor
+        ConstructorExample example2 = new ConstructorExample(42, "Hello");
+
+        // Parameterized constructor with int
+        ConstructorExample example3 = new ConstructorExample(123);
+
+        // Parameterized constructor with String
+        ConstructorExample example4 = new ConstructorExample("World");
+
+        // Parameterized constructor with int, String, and boolean
+        ConstructorExample example5 = new ConstructorExample(987, "Java", true);
+    }
+}
